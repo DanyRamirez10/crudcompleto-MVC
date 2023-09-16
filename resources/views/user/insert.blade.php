@@ -1,5 +1,5 @@
 @extends('template.layout')
-@section('titleGeneral', 'Registrar ciudad...')
+@section('titleGeneral', 'Registrar Persona...')
 @section('sectionGeneral')
 <form id="frmUserInsert" action="{{url('user/insert')}}" method="post">
 	<div class="row">
@@ -35,20 +35,21 @@
 <table class="table table-striped mt-4">
     <thead>
         <tr>
-            <th>DNI</th>
             <th>Nombre</th>
             <th>Apellido</th>
+			<th>DNI</th>
             <th>Correo</th>
             <th>Fecha de Registro</th>
+			<th>Accion</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
         @foreach ($listTUser as $user)
             <tr>
-                <td>{{ $user->dni }}</td>
                 <td>{{ $user->firstName }}</td>
                 <td>{{ $user->surName }}</td>
+				<td>{{ $user->dni }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->created_at }}</td>
 				<td class="text-right">
